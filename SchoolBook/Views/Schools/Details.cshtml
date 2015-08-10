@@ -1,0 +1,58 @@
+﻿@model SchoolBook.Models.School
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>School</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolPhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolPhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolWebSite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolWebSite)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
