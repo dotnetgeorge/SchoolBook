@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SchoolBook.Models
@@ -27,7 +28,12 @@ namespace SchoolBook.Models
         public virtual Teacher Teacher { get; set; }
         public int? TeacherId { get; set; }
 
+        [HiddenInput(DisplayValue = false)]
+        public int? SchoolId { get; set; }
+        public virtual School School { get; set; }
+
         public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }
+        public virtual ICollection<Homework> Homeworks { get; set; }
     }
 }

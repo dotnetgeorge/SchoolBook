@@ -13,7 +13,7 @@ namespace SchoolBook.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201508100900557_Initial1"; }
+            get { return "201508111638300_Initial1"; }
         }
         
         string IMigrationMetadata.Source

@@ -171,6 +171,7 @@
     <Compile Include="Controllers\ClassesController.cs" />
     <Compile Include="Controllers\GradesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeworksController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Controllers\SchoolsController.cs" />
@@ -180,23 +181,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201508091146215_Initial.cs" />
-    <Compile Include="Migrations\201508091146215_Initial.Designer.cs">
-      <DependentUpon>201508091146215_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201508111637479_Initial.cs" />
+    <Compile Include="Migrations\201508111637479_Initial.Designer.cs">
+      <DependentUpon>201508111637479_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201508100900557_Initial1.cs" />
-    <Compile Include="Migrations\201508100900557_Initial1.Designer.cs">
-      <DependentUpon>201508100900557_Initial1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508101001289_Initial2.cs" />
-    <Compile Include="Migrations\201508101001289_Initial2.Designer.cs">
-      <DependentUpon>201508101001289_Initial2.cs</DependentUpon>
+    <Compile Include="Migrations\201508111638300_Initial1.cs" />
+    <Compile Include="Migrations\201508111638300_Initial1.Designer.cs">
+      <DependentUpon>201508111638300_Initial1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Classes.cs" />
     <Compile Include="Models\EmailFormModel.cs" />
     <Compile Include="Models\Grade.cs" />
+    <Compile Include="Models\Homework.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\School.cs" />
@@ -273,11 +271,6 @@
     <Content Include="Views\Navigation\_Empty.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Sent.cshtml" />
-    <Content Include="Views\Subjects\Create.cshtml" />
-    <Content Include="Views\Subjects\Delete.cshtml" />
-    <Content Include="Views\Subjects\Details.cshtml" />
-    <Content Include="Views\Subjects\Edit.cshtml" />
-    <Content Include="Views\Subjects\Index.cshtml" />
     <Content Include="Views\Grades\Create.cshtml" />
     <Content Include="Views\Grades\Delete.cshtml" />
     <Content Include="Views\Grades\Details.cshtml" />
@@ -288,16 +281,26 @@
     <Content Include="Views\Teachers\Details.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
     <Content Include="Views\Teachers\Index.cshtml" />
-    <Content Include="Views\Classes\Create.cshtml" />
-    <Content Include="Views\Classes\Delete.cshtml" />
-    <Content Include="Views\Classes\Details.cshtml" />
-    <Content Include="Views\Classes\Edit.cshtml" />
-    <Content Include="Views\Classes\Index.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />
     <Content Include="Views\Students\Delete.cshtml" />
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
     <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Classes\Create.cshtml" />
+    <Content Include="Views\Classes\Delete.cshtml" />
+    <Content Include="Views\Classes\Details.cshtml" />
+    <Content Include="Views\Classes\Edit.cshtml" />
+    <Content Include="Views\Classes\Index.cshtml" />
+    <Content Include="Views\Subjects\Create.cshtml" />
+    <Content Include="Views\Subjects\Delete.cshtml" />
+    <Content Include="Views\Subjects\Details.cshtml" />
+    <Content Include="Views\Subjects\Edit.cshtml" />
+    <Content Include="Views\Subjects\Index.cshtml" />
+    <Content Include="Views\Homeworks\Create.cshtml" />
+    <Content Include="Views\Homeworks\Delete.cshtml" />
+    <Content Include="Views\Homeworks\Details.cshtml" />
+    <Content Include="Views\Homeworks\Edit.cshtml" />
+    <Content Include="Views\Homeworks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -311,14 +314,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508091146215_Initial.resx">
-      <DependentUpon>201508091146215_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508111637479_Initial.resx">
+      <DependentUpon>201508111637479_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508100900557_Initial1.resx">
-      <DependentUpon>201508100900557_Initial1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508101001289_Initial2.resx">
-      <DependentUpon>201508101001289_Initial2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508111638300_Initial1.resx">
+      <DependentUpon>201508111638300_Initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

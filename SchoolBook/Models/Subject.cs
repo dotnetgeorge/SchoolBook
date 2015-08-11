@@ -22,5 +22,6 @@ namespace SchoolBook.Models
         public double SubjectHoursPerWeek { get; set; }
         
         public virtual ICollection<Teacher> Teachers { get; set; }
+        public virtual ICollection<Homework> Homeworks { get; set; }
     }
 }

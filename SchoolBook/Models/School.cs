@@ -38,5 +38,6 @@ namespace SchoolBook.Models
         public virtual ICollection<Teacher> Teachers { get; set; }
         public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<Classes> Classes { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

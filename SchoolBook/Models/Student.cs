@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -33,6 +34,11 @@ namespace SchoolBook.Models
         public string StudentPhoneNumber { get; set; }
 
         [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Student E-mail")]
+        public string StudentEmail { get; set; }
+
+        [Required]
         [DataType(DataType.MultilineText)]
         [Display(Name = "Student Details")]
         public string Details { get; set; }
@@ -42,6 +48,11 @@ namespace SchoolBook.Models
         public int ClassesId { get; set; }
         public virtual Classes Classes { get; set; }
 
+        [HiddenInput(DisplayValue = false)]
+        public int SchoolId { get; set; }
+        public virtual School School { get; set; }
+
         public virtual ICollection<Grade> Grades { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }
