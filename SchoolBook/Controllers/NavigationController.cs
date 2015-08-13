@@ -29,9 +29,9 @@ namespace SchoolBook.Controllers
                 {
                     return PartialView("_AdminMenuView");
                 }
-                else if (userManager.IsInRole(this.User.Identity.GetUserId(), "Principle")) 
+                else if (userManager.IsInRole(this.User.Identity.GetUserId(), "Principal")) 
                 {
-                    return PartialView("_PrincipleMenuView");
+                    return PartialView("_PrincipalenuView");
                 }
                 else
                 {

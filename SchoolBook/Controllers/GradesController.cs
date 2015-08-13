@@ -37,7 +37,7 @@ namespace SchoolBook.Controllers
         }
 
         // GET: Grades/Create
-        [Authorize(Roles = "Admin, Principle")]
+        [Authorize(Roles = "Admin, Principal")]
         public ActionResult Create()
         {
             ViewBag.StudentId = new SelectList(db.Students, "Id", "StudentName");
@@ -50,7 +50,7 @@ namespace SchoolBook.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin, Principle")]
+        [Authorize(Roles = "Admin, Principal")]
         public ActionResult Create([Bind(Include = "Id,StudentId,SelectedGrade,SubjectId")] Grade grade)
         {
             if (ModelState.IsValid)
@@ -66,7 +66,7 @@ namespace SchoolBook.Controllers
         }
 
         // GET: Grades/Edit/5
-        [Authorize(Roles = "Admin, Principle")]
+        [Authorize(Roles = "Admin, Principal")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -88,7 +88,7 @@ namespace SchoolBook.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin, Principle")]
+        [Authorize(Roles = "Admin, Principal")]
         public ActionResult Edit([Bind(Include = "Id,StudentId,SelectedGrade,SubjectId")] Grade grade)
         {
             if (ModelState.IsValid)
@@ -103,7 +103,7 @@ namespace SchoolBook.Controllers
         }
 
         // GET: Grades/Delete/5
-        [Authorize(Roles = "Admin, Principle")]
+        [Authorize(Roles = "Admin, Principal")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -121,7 +121,7 @@ namespace SchoolBook.Controllers
         // POST: Grades/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin, Principle")]
+        [Authorize(Roles = "Admin, Principal")]
         public ActionResult DeleteConfirmed(int id)
         {
             Grade grade = db.Grades.Find(id);
