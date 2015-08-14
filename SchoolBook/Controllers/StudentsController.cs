@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SchoolBook.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace SchoolBook.Controllers
 {
@@ -17,8 +19,7 @@ namespace SchoolBook.Controllers
         // GET: Students
         public ActionResult Index()
         {
-            var students = db.Students.Include(s => s.Classes);
-
+            var students = db.Students.Include(s => s.Classes).Include(s => s.School);
             return View(students.ToList());
         }
 
@@ -41,6 +42,7 @@ namespace SchoolBook.Controllers
         public ActionResult Create()
         {
             ViewBag.ClassesId = new SelectList(db.Classes, "Id", "Class");
+            ViewBag.SchoolId = new SelectList(db.Schools, "Id", "SchoolName");
             return View();
         }
 
@@ -49,16 +51,50 @@ namespace SchoolBook.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,StudentName,StudentAge,StudentAddress,StudentPhoneNumber,Details,ClassesId")] Student student)
+        public ActionResult Create([Bind(Include = "Id,StudentName,StudentAge,StudentGender,StudentAddress,StudentPhoneNumber,StudentEmail,Details,ParentName,ParentAddress,ClassesId,SchoolId")] Student student)
         {
             if (ModelState.IsValid)
             {
+                var passwordHash = new PasswordHasher();
+                var password = passwordHash.HashPassword("CC22bb!");
+                var email = student.StudentEmail;
+                var userName = student.StudentName.Trim(new char[] { ' ' });
+
+                db.Users.Add(new ApplicationUser
+                {
+                    UserName = email,
+                    Email = email,
+                    PasswordHash = password,
+                    SecurityStamp = Guid.NewGuid().ToString(),
+                    PhoneNumber = student.StudentPhoneNumber,
+                    LockoutEnabled = true
+                });
+
+                db.SaveChanges();
+
+                //if (!(db.Users.Any(u => u.Email == student.StudentEmail)))
+                //{
+                //    var userStore = new UserStore<ApplicationUser>(db);
+                //    var userManager = new UserManager<ApplicationUser>(userStore);
+                //    var userToInsert = new ApplicationUser
+                //    {
+                //        UserName = userName,
+                //        Email = student.StudentEmail,
+                //        PhoneNumber = student.StudentPhoneNumber
+                //    };
+
+                //    userManager.Create(userToInsert, "CC22bb!");
+
+                //    db.SaveChanges();
+                //}
+
                 db.Students.Add(student);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.ClassesId = new SelectList(db.Classes, "Id", "Class", student.ClassesId);
+            ViewBag.SchoolId = new SelectList(db.Schools, "Id", "SchoolName", student.SchoolId);
             return View(student);
         }
 
@@ -75,6 +111,7 @@ namespace SchoolBook.Controllers
                 return HttpNotFound();
             }
             ViewBag.ClassesId = new SelectList(db.Classes, "Id", "Class", student.ClassesId);
+            ViewBag.SchoolId = new SelectList(db.Schools, "Id", "SchoolName", student.SchoolId);
             return View(student);
         }
 
@@ -83,7 +120,7 @@ namespace SchoolBook.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,StudentName,StudentAge,StudentAddress,StudentPhoneNumber,Details,ClassesId")] Student student)
+        public ActionResult Edit([Bind(Include = "Id,StudentName,StudentAge,StudentGender,StudentAddress,StudentPhoneNumber,StudentEmail,Details,ParentName,ParentAddress,ClassesId,SchoolId")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -92,6 +129,7 @@ namespace SchoolBook.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ClassesId = new SelectList(db.Classes, "Id", "Class", student.ClassesId);
+            ViewBag.SchoolId = new SelectList(db.Schools, "Id", "SchoolName", student.SchoolId);
             return View(student);
         }
 

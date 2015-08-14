@@ -142,4 +142,6 @@ C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\Sch
 C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\SchoolBook.pdb
 C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\SchoolBook.Migrations.Initial.resources
 C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\SchoolBook.csproj.GenerateResource.Cache
-C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\SchoolBook.Migrations.Initial1.resources
+C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\SchoolBook.Migrations.InitialStudent.resources
+C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\SchoolBook.Migrations.InitialSchool.resources
+C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\SchoolBook.Migrations.InitialUser.resources

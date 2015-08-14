@@ -167,6 +167,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AbsencesController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
     <Compile Include="Controllers\GradesController.cs" />
@@ -174,6 +175,7 @@
     <Compile Include="Controllers\HomeworksController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\RemarksController.cs" />
     <Compile Include="Controllers\SchoolsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\SubjectsController.cs" />
@@ -181,15 +183,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201508111637479_Initial.cs" />
-    <Compile Include="Migrations\201508111637479_Initial.Designer.cs">
-      <DependentUpon>201508111637479_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201508141327324_Initial.cs" />
+    <Compile Include="Migrations\201508141327324_Initial.Designer.cs">
+      <DependentUpon>201508141327324_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201508111638300_Initial1.cs" />
-    <Compile Include="Migrations\201508111638300_Initial1.Designer.cs">
-      <DependentUpon>201508111638300_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\201508141330006_InitialStudent.cs" />
+    <Compile Include="Migrations\201508141330006_InitialStudent.Designer.cs">
+      <DependentUpon>201508141330006_InitialStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508141339479_InitialSchool.cs" />
+    <Compile Include="Migrations\201508141339479_InitialSchool.Designer.cs">
+      <DependentUpon>201508141339479_InitialSchool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508142105007_InitialUser.cs" />
+    <Compile Include="Migrations\201508142105007_InitialUser.Designer.cs">
+      <DependentUpon>201508142105007_InitialUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Absence.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Classes.cs" />
     <Compile Include="Models\EmailFormModel.cs" />
@@ -197,6 +208,7 @@
     <Compile Include="Models\Homework.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Remark.cs" />
     <Compile Include="Models\School.cs" />
     <Compile Include="Models\SchoolBookDB.cs" />
     <Compile Include="Models\SchoolBookDBInitializer.cs" />
@@ -281,11 +293,6 @@
     <Content Include="Views\Teachers\Details.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
     <Content Include="Views\Teachers\Index.cshtml" />
-    <Content Include="Views\Students\Create.cshtml" />
-    <Content Include="Views\Students\Delete.cshtml" />
-    <Content Include="Views\Students\Details.cshtml" />
-    <Content Include="Views\Students\Edit.cshtml" />
-    <Content Include="Views\Students\Index.cshtml" />
     <Content Include="Views\Classes\Create.cshtml" />
     <Content Include="Views\Classes\Delete.cshtml" />
     <Content Include="Views\Classes\Details.cshtml" />
@@ -301,6 +308,21 @@
     <Content Include="Views\Homeworks\Details.cshtml" />
     <Content Include="Views\Homeworks\Edit.cshtml" />
     <Content Include="Views\Homeworks\Index.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Absences\Create.cshtml" />
+    <Content Include="Views\Absences\Delete.cshtml" />
+    <Content Include="Views\Absences\Details.cshtml" />
+    <Content Include="Views\Absences\Edit.cshtml" />
+    <Content Include="Views\Absences\Index.cshtml" />
+    <Content Include="Views\Remarks\Create.cshtml" />
+    <Content Include="Views\Remarks\Delete.cshtml" />
+    <Content Include="Views\Remarks\Details.cshtml" />
+    <Content Include="Views\Remarks\Edit.cshtml" />
+    <Content Include="Views\Remarks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,11 +336,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508111637479_Initial.resx">
-      <DependentUpon>201508111637479_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508141327324_Initial.resx">
+      <DependentUpon>201508141327324_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508111638300_Initial1.resx">
-      <DependentUpon>201508111638300_Initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508141330006_InitialStudent.resx">
+      <DependentUpon>201508141330006_InitialStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508141339479_InitialSchool.resx">
+      <DependentUpon>201508141339479_InitialSchool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508142105007_InitialUser.resx">
+      <DependentUpon>201508142105007_InitialUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,10 +3,11 @@ namespace SchoolBook.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial1 : DbMigration
+    public partial class InitialUser : DbMigration
     {
         public override void Up()
         {
+            AddColumn("dbo.AspNetUsers", "Discriminator", c => c.String(nullable: false, maxLength: 128));
         }
         
         public override void Down()

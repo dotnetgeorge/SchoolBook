@@ -15,10 +15,16 @@
             @Html.DisplayNameFor(model => model.Classes.Class)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.School.SchoolName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.StudentName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StudentAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentGender)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StudentAddress)
@@ -27,7 +33,16 @@
             @Html.DisplayNameFor(model => model.StudentPhoneNumber)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.StudentEmail)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentAddress)
         </th>
         <th></th>
     </tr>
@@ -38,10 +53,16 @@
             @Html.DisplayFor(modelItem => item.Classes.Class)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.School.SchoolName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.StudentName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StudentAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentGender)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StudentAddress)
@@ -50,7 +71,16 @@
             @Html.DisplayFor(modelItem => item.StudentPhoneNumber)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.StudentEmail)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParentAddress)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

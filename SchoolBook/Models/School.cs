@@ -35,6 +35,11 @@ namespace SchoolBook.Models
         [Display(Name = "School Web Site")]
         public string SchoolWebSite { get; set; }
 
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "School E-mail")]
+        public string SchoolEmail { get; set; }
+
         public virtual ICollection<Teacher> Teachers { get; set; }
         public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<Classes> Classes { get; set; }

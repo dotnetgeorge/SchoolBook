@@ -38,5 +38,7 @@ namespace SchoolBook.Models
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Homework> Homeworks { get; set; }
+        public DbSet<Absence> Absences { get; set; }
+        public DbSet<Remark> Remarks { get; set; }
     }
 }
