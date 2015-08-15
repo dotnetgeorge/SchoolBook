@@ -12,9 +12,32 @@ namespace SchoolBook.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        SchoolBookDB db = new SchoolBookDB();
+
+        public ActionResult Autocomplete(string term)
         {
-            return View();
+            var schools = db.Schools
+                            .Where(x => x.SchoolName.StartsWith(term))
+                            .Take(10)
+                            .Select(r => new {
+                                label = r.SchoolName
+                            });
+
+            return Json(schools, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Index(string searchTerm = null)
+        {
+            var schools = db.Schools
+                            .Where(x => searchTerm == null || x.SchoolName.StartsWith(searchTerm))
+                            .Take(10).ToList();
+
+            if(Request.IsAjaxRequest())
+            {
+                return PartialView("_SearchSchoolsPartial", schools);
+            }
+
+            return View(schools);
         }
 
         public ActionResult About()

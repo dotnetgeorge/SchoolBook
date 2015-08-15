@@ -1,0 +1,17 @@
+﻿@model IEnumerable<SchoolBook.Models.School>
+
+<div class="row" id="schoolList">
+    <div class="col-md-12">
+        <button id="hide" class="btn btn-danger btn-lg" style="position:absolute;top:5px;right:5px;margin:0;padding:5px 3px;" onclick="closeDialog()">Close Window</button>
+
+        @foreach (var school in Model)
+        {
+            <h2>@Html.DisplayFor(modelItem => school.SchoolName)</h2>
+            <p>@Html.DisplayFor(modelItem => school.SchoolAddress)</p>
+            <p>@Html.DisplayFor(modelItem => school.SchoolPhoneNumber)</p>
+            <p>@Html.DisplayFor(modelItem => school.SchoolInfo)</p>
+            <p>@Html.DisplayFor(modelItem => school.SchoolWebSite)</p>
+            <p>@Html.DisplayFor(modelItem => school.SchoolEmail)</p>
+        }
+    </div>
+</div>
