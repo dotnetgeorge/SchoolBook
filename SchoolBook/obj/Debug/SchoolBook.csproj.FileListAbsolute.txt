@@ -145,3 +145,7 @@ C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\Sch
 C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\SchoolBook.Migrations.InitialStudent.resources
 C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\SchoolBook.Migrations.InitialSchool.resources
 C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\obj\Debug\SchoolBook.Migrations.InitialUser.resources
+C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\bin\PagedList.dll
+C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\bin\PagedList.Mvc.dll
+C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\bin\PagedList.xml
+C:\Users\George\Documents\GitHubVisualStudio\SchoolBook\SchoolBook\bin\PagedList.Mvc.xml

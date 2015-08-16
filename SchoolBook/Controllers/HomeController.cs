@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 using System.Net;
@@ -17,6 +18,7 @@ namespace SchoolBook.Controllers
         public ActionResult Autocomplete(string term)
         {
             var schools = db.Schools
+                            .Include(s => s.Teachers)
                             .Where(x => x.SchoolName.StartsWith(term))
                             .Take(10)
                             .Select(r => new {

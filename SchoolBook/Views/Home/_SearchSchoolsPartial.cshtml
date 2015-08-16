@@ -1,10 +1,9 @@
 ﻿@model IEnumerable<SchoolBook.Models.School>
 
 <div class="row" id="schoolList">
-    <div class="col-md-12">
-        <button id="hide" class="btn btn-danger btn-lg" style="position:absolute;top:5px;right:5px;margin:0;padding:5px 3px;">Close Window</button>
+    <div class="col-md-11">
 
-        @foreach (var school in Model)
+        @*@foreach (var school in Model)
         {
             <h2>@Html.DisplayFor(modelItem => school.SchoolName)</h2>
             <p>@Html.DisplayFor(modelItem => school.SchoolAddress)</p>
@@ -12,6 +11,34 @@
             <p>@Html.DisplayFor(modelItem => school.SchoolInfo)</p>
             <p>@Html.DisplayFor(modelItem => school.SchoolWebSite)</p>
             <p>@Html.DisplayFor(modelItem => school.SchoolEmail)</p>
-        }
+        }*@
+
+        <table class="table">
+            <tr></tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.SchoolName)</th>
+                <th>@Html.DisplayNameFor(model => model.SchoolAddress)</th>
+                <th>@Html.DisplayNameFor(model => model.SchoolPhoneNumber)</th>
+                <th>@Html.DisplayNameFor(model => model.SchoolInfo)</th>
+                <th>@Html.DisplayNameFor(model => model.SchoolWebSite)</th>
+                <th>@Html.DisplayNameFor(model => model.SchoolEmail)</th>
+            </tr>
+
+            @foreach (var school in Model) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => school.SchoolName)</td>
+                    <td>@Html.DisplayFor(modelItem => school.SchoolAddress)</td>
+                    <td>@Html.DisplayFor(modelItem => school.SchoolPhoneNumber)</td>
+                    <td><a href="@Url.Action("Details", "Schools", new { id = school.Id})">View more details</a></td>
+                    <td>@Html.DisplayFor(modelItem => school.SchoolWebSite)</td>
+                    <td>@Html.DisplayFor(modelItem => school.SchoolEmail)</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="col-md-1">
+        <button id="hide" class="btn btn-danger btn-lg" style="position:absolute;top:5px;right:5px;margin:0;padding:5px 3px;">Close</button>
+
     </div>
 </div>
