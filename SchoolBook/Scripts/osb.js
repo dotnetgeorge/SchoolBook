@@ -42,10 +42,17 @@
     $("form[data-osb-ajax='true']").submit(ajaxSubmitForm);
     $("input[data-osb-autocomplete]").each(createAutocomplete);
 
-    $("#schoolList").css("display", "none");
-    function closeDialog() {
-        $(".row:first").fadeOut();
+    //$("#test").css("display", "none");
+    
+    //$("#hide").click(function (e) {
+    //    e.stopPropagation();
+    //    $(this).parents("div#schoolList").hide();
+    //});
 
-        return false;
-    }
+    $("#schoolList").hide();
+
+    $(document).on('click', '#hide', function () {
+        $("#schoolList").hide();
+        $("#searchInput").val('');
+    });
 });

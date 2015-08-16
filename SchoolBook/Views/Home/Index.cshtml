@@ -10,7 +10,7 @@
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
     <form method="get" class="navbar-form navbar-right" role="search" action="@Url.Action("Index")" data-osb-ajax="true" data-osb-target="#schoolList">
         <div class="form-group">
-            <input type="search" class="form-control input-group-lg" placeholder="Search Schools" name="searchTerm" data-osb-autocomplete="@Url.Action("Autocomplete")" />
+            <input type="search" id="searchInput" class="form-control input-group-lg" placeholder="Search Schools" name="searchTerm" data-osb-autocomplete="@Url.Action("Autocomplete")" />
         </div>
         <button type="submit" class="btn btn-primary">Search</button>
     </form>
