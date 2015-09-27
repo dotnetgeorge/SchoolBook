@@ -18,20 +18,20 @@
             <tr>
                 <th>@Html.DisplayNameFor(model => model.SchoolName)</th>
                 <th>@Html.DisplayNameFor(model => model.SchoolAddress)</th>
-                <th>@Html.DisplayNameFor(model => model.SchoolPhoneNumber)</th>
+                @*<th>@Html.DisplayNameFor(model => model.SchoolPhoneNumber)</th>*@
                 <th>@Html.DisplayNameFor(model => model.SchoolInfo)</th>
-                <th>@Html.DisplayNameFor(model => model.SchoolWebSite)</th>
-                <th>@Html.DisplayNameFor(model => model.SchoolEmail)</th>
+                @*<th>@Html.DisplayNameFor(model => model.SchoolWebSite)</th>
+                <th>@Html.DisplayNameFor(model => model.SchoolEmail)</th>*@
             </tr>
 
             @foreach (var school in Model) {
                 <tr>
                     <td>@Html.DisplayFor(modelItem => school.SchoolName)</td>
                     <td>@Html.DisplayFor(modelItem => school.SchoolAddress)</td>
-                    <td>@Html.DisplayFor(modelItem => school.SchoolPhoneNumber)</td>
+                    @*<td>@Html.DisplayFor(modelItem => school.SchoolPhoneNumber)</td>*@
                     <td><a href="@Url.Action("Details", "Schools", new { id = school.Id})">View more details</a></td>
-                    <td>@Html.DisplayFor(modelItem => school.SchoolWebSite)</td>
-                    <td>@Html.DisplayFor(modelItem => school.SchoolEmail)</td>
+                    @*<td>@Html.DisplayFor(modelItem => school.SchoolWebSite)</td>
+                    <td>@Html.DisplayFor(modelItem => school.SchoolEmail)</td>*@
                 </tr>
             }
 

@@ -178,6 +178,7 @@
     <Compile Include="Controllers\AbsencesController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GradesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeworksController.cs" />
@@ -207,6 +208,10 @@
     <Compile Include="Migrations\201508142105007_InitialUser.Designer.cs">
       <DependentUpon>201508142105007_InitialUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509271828053_InitialUserDBUpdate.cs" />
+    <Compile Include="Migrations\201509271828053_InitialUserDBUpdate.Designer.cs">
+      <DependentUpon>201509271828053_InitialUserDBUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Absence.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -214,6 +219,7 @@
     <Compile Include="Models\EmailFormModel.cs" />
     <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\Homework.cs" />
+    <Compile Include="Models\IdentityExtensions.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Remark.cs" />
@@ -371,6 +377,7 @@
     <Content Include="Views\Remarks\Edit.cshtml" />
     <Content Include="Views\Remarks\Index.cshtml" />
     <Content Include="Views\Home\_SearchSchoolsPartial.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -395,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201508142105007_InitialUser.resx">
       <DependentUpon>201508142105007_InitialUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509271828053_InitialUserDBUpdate.resx">
+      <DependentUpon>201509271828053_InitialUserDBUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

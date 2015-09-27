@@ -58,6 +58,7 @@ namespace SchoolBook.Controllers
                 var passwordHash = new PasswordHasher();
                 var password = passwordHash.HashPassword("CC22bb!");
                 var email = student.StudentEmail;
+                //var index = student.StudentEmail.IndexOf("@");
                 var userName = student.StudentName.Trim(new char[] { ' ' });
 
                 db.Users.Add(new ApplicationUser
@@ -67,7 +68,9 @@ namespace SchoolBook.Controllers
                     PasswordHash = password,
                     SecurityStamp = Guid.NewGuid().ToString(),
                     PhoneNumber = student.StudentPhoneNumber,
-                    LockoutEnabled = true
+                    LockoutEnabled = true,
+                    FullName = student.StudentName,
+                    SchoolID = student.SchoolId
                 });
 
                 db.SaveChanges();
